@@ -15,3 +15,4 @@ C:\Users\ASUS\source\repos\MiniSocialApp\MiniSocialApp\obj\Debug\net8.0\refint\M
 C:\Users\ASUS\source\repos\MiniSocialApp\MiniSocialApp\obj\Debug\net8.0\MiniSocialApp.pdb
 C:\Users\ASUS\source\repos\MiniSocialApp\MiniSocialApp\obj\Debug\net8.0\MiniSocialApp.genruntimeconfig.cache
 C:\Users\ASUS\source\repos\MiniSocialApp\MiniSocialApp\obj\Debug\net8.0\ref\MiniSocialApp.dll
+C:\Users\ASUS\source\repos\MiniSocialApp\MiniSocialApp\obj\Debug\net8.0\MiniSocialApp.sourcelink.json

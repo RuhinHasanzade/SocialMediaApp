@@ -88,33 +88,16 @@ namespace MiniSocialApp.Helper
                         postService.GetAllPosts().ForEach(post => post.GetInfoPost());
                         break;
                     case 2:
-                        Console.Write("Axtartiqiniz post id dagil edin: ");
-                        string inpId = Console.ReadLine();
-                        int id = 0;
-                        try
-                        {
-                            id = int.Parse(inpId);
-                        }catch
-                        {
-                            Console.WriteLine("Duzgun dagil edin");
-                            continue;
-                        }
-                        Post post = postService.GetPostById(id);
-                        if(post!= null)
-                        {
-                            post.GetInfoPost();
-                        }
+                        GetPostById();
                         break;
                     case 3:
-                        Console.WriteLine("Create posts");
-                        Console.Write("ID dagil edin: ");
-                        
+                        AddPost();
                         break;
                     case 4:
-                        Console.WriteLine("UPDATE POST");
+                        UpdatePost();
                         break;
                     case 5:
-                        Console.WriteLine("Delete post");
+                        DeletePost();
                         break;
                     case 0:
                         Console.WriteLine("Exit--");
@@ -179,6 +162,104 @@ namespace MiniSocialApp.Helper
                 }
             }
 
+        }
+
+        private static void AddPost()
+        {
+            Console.WriteLine("Create posts");
+            Console.Write("ID dagil edin: ");
+            string idInp = Console.ReadLine();
+            int id = 0;
+            try
+            {
+                id = int.Parse(idInp);
+            }
+            catch
+            {
+                Console.WriteLine("Duzgun dagil edin");
+                return;
+            }
+
+            Console.Write("User Id dagil edin: ");
+            string userIdInp = Console.ReadLine();
+            int userPostId = 0;
+            try
+            {
+                userPostId = int.Parse(userIdInp);
+            }
+            catch
+            {
+                Console.WriteLine("Duzgun dagil edin");
+                return;
+            }
+            Console.Write("Title dagil edin: ");
+            string title = Console.ReadLine();
+            Console.Write("Body dagil edin: ");
+            string body = Console.ReadLine();
+            Post crepost = new Post(id, userPostId, title, body);
+            postService.AddPost(crepost);
+        }
+
+        private static void GetPostById()
+        {
+            Console.Write("Axtartiqiniz post id dagil edin: ");
+            string inpId = Console.ReadLine();
+            int id = 0;
+            try
+            {
+                id = int.Parse(inpId);
+            }
+            catch
+            {
+                Console.WriteLine("Duzgun dagil edin");
+                return;
+            }
+            Post post = postService.GetPostById(id);
+            if (post != null)
+            {
+                post.GetInfoPost();
+            }
+        }
+
+        private static void UpdatePost()
+        {
+            Console.WriteLine("UPDATE POST");
+            Console.Write("Yeni title dagil edin: ");
+            string updatePostTitle = Console.ReadLine();
+            Console.Write("Yeni body dagil edin: ");
+            string updatePostBody = Console.ReadLine();
+            Console.Write("Deyismey istediynz postun id dagil edin");
+            string updatePostIdInp = Console.ReadLine();
+            int updateid = 0;
+            try
+            {
+                updateid = int.Parse(updatePostIdInp);
+            }
+            catch
+            {
+                Console.WriteLine("Duzgun dagil edin");
+                return;
+            }
+            Post updatePost = new Post(updatePostTitle, updatePostBody);
+            postService.UpdatePost(updatePost, updateid);
+        }
+
+        private static void DeletePost()
+        {
+            Console.WriteLine("Delete post");
+            Console.Write("Silmek istediyinz postun id dagil edin: ");
+            string deleteIdInp = Console.ReadLine();
+            int deleteid = 0;
+            try
+            {
+                deleteid = int.Parse(deleteIdInp);
+            }
+            catch
+            {
+                Console.WriteLine("Duzgun dagil edin");
+                return;
+            }
+            postService.DeletePost(deleteid);
         }
     }
 }

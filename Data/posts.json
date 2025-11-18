@@ -40,5 +40,11 @@
     "UserId": 1,
     "Title": "Test yenilenmis post",
     "Body": "Bu post yenilenib update olunub"
+  },
+  {
+    "Id": 57,
+    "UserId": 57,
+    "Title": "bu maraqldiir",
+    "Body": "salam necesizz"
   }
 ]
