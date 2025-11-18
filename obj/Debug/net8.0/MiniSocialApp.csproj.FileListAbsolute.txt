@@ -1,0 +1,17 @@
+C:\Users\ASUS\source\repos\MiniSocialApp\MiniSocialApp\bin\Debug\net8.0\MiniSocialApp.exe
+C:\Users\ASUS\source\repos\MiniSocialApp\MiniSocialApp\bin\Debug\net8.0\MiniSocialApp.deps.json
+C:\Users\ASUS\source\repos\MiniSocialApp\MiniSocialApp\bin\Debug\net8.0\MiniSocialApp.runtimeconfig.json
+C:\Users\ASUS\source\repos\MiniSocialApp\MiniSocialApp\bin\Debug\net8.0\MiniSocialApp.dll
+C:\Users\ASUS\source\repos\MiniSocialApp\MiniSocialApp\bin\Debug\net8.0\MiniSocialApp.pdb
+C:\Users\ASUS\source\repos\MiniSocialApp\MiniSocialApp\bin\Debug\net8.0\Newtonsoft.Json.dll
+C:\Users\ASUS\source\repos\MiniSocialApp\MiniSocialApp\obj\Debug\net8.0\MiniSocialApp.csproj.AssemblyReference.cache
+C:\Users\ASUS\source\repos\MiniSocialApp\MiniSocialApp\obj\Debug\net8.0\MiniSocialApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ASUS\source\repos\MiniSocialApp\MiniSocialApp\obj\Debug\net8.0\MiniSocialApp.AssemblyInfoInputs.cache
+C:\Users\ASUS\source\repos\MiniSocialApp\MiniSocialApp\obj\Debug\net8.0\MiniSocialApp.AssemblyInfo.cs
+C:\Users\ASUS\source\repos\MiniSocialApp\MiniSocialApp\obj\Debug\net8.0\MiniSocialApp.csproj.CoreCompileInputs.cache
+C:\Users\ASUS\source\repos\MiniSocialApp\MiniSocialApp\obj\Debug\net8.0\MiniSoci.74FF9049.Up2Date
+C:\Users\ASUS\source\repos\MiniSocialApp\MiniSocialApp\obj\Debug\net8.0\MiniSocialApp.dll
+C:\Users\ASUS\source\repos\MiniSocialApp\MiniSocialApp\obj\Debug\net8.0\refint\MiniSocialApp.dll
+C:\Users\ASUS\source\repos\MiniSocialApp\MiniSocialApp\obj\Debug\net8.0\MiniSocialApp.pdb
+C:\Users\ASUS\source\repos\MiniSocialApp\MiniSocialApp\obj\Debug\net8.0\MiniSocialApp.genruntimeconfig.cache
+C:\Users\ASUS\source\repos\MiniSocialApp\MiniSocialApp\obj\Debug\net8.0\ref\MiniSocialApp.dll

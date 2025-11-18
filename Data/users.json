@@ -1,0 +1,26 @@
+[
+  {
+    "Id": 1,
+    "Name": "Leanne Graham",
+    "UserName": "Bret",
+    "Email": "Sincere@april.biz",
+    "Phone": "1-770-736-8031 x56442",
+    "Website": "hildegard.org"
+  },
+  {
+    "Id": 4,
+    "Name": "Ruhin Hasanzada",
+    "UserName": "5.7",
+    "Email": "ruhinhasanzade@gmail.com",
+    "Phone": "050-536-57-1",
+    "Website": "ruhin.dev"
+  },
+  {
+    "Id": 3,
+    "Name": "Ayxan Besirov",
+    "UserName": "Ayka",
+    "Email": "ayka@mail.ru",
+    "Phone": "050-43-33-3-3",
+    "Website": "ayka.info"
+  }
+]
