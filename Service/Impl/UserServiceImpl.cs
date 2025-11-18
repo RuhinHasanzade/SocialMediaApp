@@ -38,9 +38,36 @@ namespace MiniSocialApp.Service.Impl
 
         public void AddUser(User user)
         {
+            if(user.Id < 1)
+            {
+                Console.WriteLine("Id 1 den boyuk olmaldir");
+                return;
+            }
+            bool isUser = false;
             List<User> users = ReaderAllUsers();
+            foreach (var item in users)
+            {
+                if(item.Id == user.Id)
+                {
+                    isUser = true;
+                }
+            }
+
+            if (isUser)
+            {
+                Console.WriteLine("Bu id user var");
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(user.Name) || string.IsNullOrWhiteSpace(user.UserName) || string.IsNullOrWhiteSpace(user.Email) || string.IsNullOrWhiteSpace(user.Phone) || string.IsNullOrWhiteSpace(user.Website))
+            {
+                Console.WriteLine("Butun saheleri doldurun");
+                return;
+            }
+
             users.Add(user);
             WriteFile(users);
+            Console.WriteLine("User ugurlar elave olundu");
         }
 
         public void DeleteUser(int id)

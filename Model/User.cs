@@ -18,6 +18,16 @@ namespace MiniSocialApp.Model
 
         public User() { }
 
+        public User(int id ,  string name , string username, string email , string phone , string website)
+        {
+            Id = id;
+            Name = name;
+            UserName = username;
+            Email = email;
+            Phone = phone;
+            Website = website;
+        }
+
         public User(string name , string username , string email , string phone, string website)
         {
             Name = name;

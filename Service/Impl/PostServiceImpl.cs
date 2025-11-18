@@ -32,9 +32,39 @@ namespace MiniSocialApp.Service.Impl
 
         public void AddPost(Post post)
         {
-               List<Post> posts = ReadAllPost();
-               posts.Add(post);
-                WritePost(posts);
+            if (post.Id < 1 || post.UserId < 1)
+            {
+                Console.WriteLine("Id 1 den kicik ola bilmez");
+                return;
+            }
+
+            List<Post> posts = ReadAllPost();
+            bool isPost = false;
+            foreach (var item in posts)
+            {
+                if(post.Id == item.Id)
+                {
+                    isPost = true;
+                    break;
+                }
+            }
+
+            if(isPost)
+            {
+                Console.WriteLine("Eyni id li post yaratmaq olazm");
+                return;
+
+            }
+
+            if (string.IsNullOrWhiteSpace(post.Title) || string.IsNullOrWhiteSpace(post.Body))
+            {
+                Console.WriteLine("Saheleri tam doldurun");
+            }
+
+
+            posts.Add(post);
+            WritePost(posts);
+            Console.WriteLine("Post ugurla elave olundu");
         }
 
         public void DeletePost(int id)

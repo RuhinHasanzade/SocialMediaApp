@@ -138,18 +138,23 @@ namespace MiniSocialApp.Helper
                 {
                     case 1:
                         Console.WriteLine("Show All User");
+                        userService.GetAllUsers().ForEach(user => user.GetUserInfo());
                         break;
                     case 2:
                         Console.WriteLine("Get user by id");
+                        GetUserById();
                         break;
                     case 3:
                         Console.WriteLine("Create user");
+                        AddUser();
                         break;
                     case 4:
                         Console.WriteLine("UPDATE user");
+                        UpdateUser();
                         break;
                     case 5:
                         Console.WriteLine("Delete user");
+                        DeleteUser();
                         break;
                     case 0:
                         Console.WriteLine("Exit--");
@@ -166,6 +171,7 @@ namespace MiniSocialApp.Helper
 
         private static void AddPost()
         {
+            List<User> users = userService.GetAllUsers();
             Console.WriteLine("Create posts");
             Console.Write("ID dagil edin: ");
             string idInp = Console.ReadLine();
@@ -192,12 +198,34 @@ namespace MiniSocialApp.Helper
                 Console.WriteLine("Duzgun dagil edin");
                 return;
             }
-            Console.Write("Title dagil edin: ");
-            string title = Console.ReadLine();
-            Console.Write("Body dagil edin: ");
-            string body = Console.ReadLine();
-            Post crepost = new Post(id, userPostId, title, body);
-            postService.AddPost(crepost);
+
+            bool isUser = false;
+
+            foreach (var item in users)
+            {
+                if(userPostId == item.Id)
+                {
+                    isUser = true;
+                    break;
+                }
+            }
+
+            if(isUser)
+            {
+                Console.Write("Title dagil edin: ");
+                string title = Console.ReadLine();
+                Console.Write("Body dagil edin: ");
+                string body = Console.ReadLine();
+                Post crepost = new Post(id, userPostId, title, body);
+                postService.AddPost(crepost);
+            } else
+            {
+                Console.WriteLine("Bele bir useriniz yoxdur");
+            }
+
+            
+
+
         }
 
         private static void GetPostById()
@@ -260,6 +288,111 @@ namespace MiniSocialApp.Helper
                 return;
             }
             postService.DeletePost(deleteid);
+        }
+
+        ///////////USER MENU////////////
+        
+        private static void GetUserById()
+        {
+            Console.Write("Axtartiqiniz user id dagil edin: ");
+            string inpId = Console.ReadLine();
+            int id = 0;
+            try
+            {
+                id = int.Parse(inpId);
+            }
+            catch
+            {
+                Console.WriteLine("Duzgun dagil edin");
+                return;
+            }
+            User user = userService.GetUserById(id);
+            if (user != null)
+            {
+                user.GetUserInfo();
+            }
+        }
+
+        private static void AddUser()
+        {
+
+            Console.WriteLine("Create User");
+            Console.Write("ID dagil edin: ");
+            string idInp = Console.ReadLine();
+            int id = 0;
+            try
+            {
+                id = int.Parse(idInp);
+            }
+            catch
+            {
+                Console.WriteLine("Duzgun dagil edin");
+                return;
+            }
+            Console.Write("Name dagil edin: ");
+            string name = Console.ReadLine();
+            Console.Write("Username dagil edin: ");
+            string username = Console.ReadLine();
+            Console.Write("Phone number dagil edin: ");
+            string phoneNum = Console.ReadLine();
+            Console.Write("Email dagil edin: ");
+            string email = Console.ReadLine();
+            Console.Write("Website dagil edin: ");
+            string website = Console.ReadLine();
+
+            User user = new User(id,name,username,email,phoneNum,website);
+            userService.AddUser(user);
+        }
+
+        private static void UpdateUser()
+        {
+            Console.WriteLine("UPDATE USER");
+            Console.Write("Yeni name dagil edin: ");
+            string name = Console.ReadLine();
+            Console.Write("Yeni username dagil edin: ");
+            string username = Console.ReadLine();
+            Console.Write("Yeni email dagil edin: ");
+            string email = Console.ReadLine();
+            Console.Write("Yeni phone dagil edin: ");
+            string phone = Console.ReadLine();
+            Console.Write("Yeni website dagil edin: ");
+            string website = Console.ReadLine();
+
+
+            Console.Write("Deyismey istediynz userin id dagil edin");
+            string updateUserIdInp = Console.ReadLine();
+            int updateid = 0;
+            ;
+            try
+            {
+                updateid = int.Parse(updateUserIdInp);
+            }
+            catch
+            {
+                Console.WriteLine("Duzgun dagil edin");
+                return;
+            }
+            User user = new User(name,username,email,phone,website);
+
+            userService.UpdateUser(user , updateid);
+        }
+
+        private static void DeleteUser()
+        {
+            Console.WriteLine("Delete User");
+            Console.Write("Silmek istediyinz userin id dagil edin: ");
+            string deleteIdInp = Console.ReadLine();
+            int deleteid = 0;
+            try
+            {
+                deleteid = int.Parse(deleteIdInp);
+            }
+            catch
+            {
+                Console.WriteLine("Duzgun dagil edin");
+                return;
+            }
+            userService.DeleteUser(deleteid);
         }
     }
 }
